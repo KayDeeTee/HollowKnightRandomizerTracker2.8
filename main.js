@@ -774,6 +774,9 @@ $( document ).ready(function() {
 		function loadSettings(id) {
 			currentId = id;
 			var container = map.containers[id];
+
+			$('#containerSettingName').text(currentId || "unknown")
+
 			if ("scale" in container) 
 				$('#scale').val(container.scale);
 			
@@ -790,6 +793,9 @@ $( document ).ready(function() {
 		function loadMiscSettings(id) {
 			currentId = id;
 			var container = map.misc_containers[id];
+
+			$('#miscSettingName').text(currentId || "unknown")
+
 			if ("color" in container) 
 				$('#miscFontColor').val(container.color);
 			
@@ -798,8 +804,6 @@ $( document ).ready(function() {
 				
 			if ("fontSize" in container) 
 				$('#miscFontSize').val(container.fontSize);
-				
-
 		}
 		
 		function updateContainerItemOrder(event, ui) {
